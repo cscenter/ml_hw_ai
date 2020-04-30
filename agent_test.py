@@ -17,10 +17,12 @@ def init_ai_agent(class_path) -> BaseAgent:
 
 
 if __name__ == '__main__':
+    agent_path = "agent.my_agent.MyAgent"
     if len(sys.argv) < 2:
-        print("Specify agent module path. Example: 'agent.dummy.DummyAgent'")
-        sys.exit(0)
-    agent = init_ai_agent(sys.argv[1])
+        print(f"Agent module not specified. Use default: {agent_path}")
+    else:
+        agent_path = sys.argv[1]
+    agent = init_ai_agent(agent_path)
     agent.agent_id = str(uuid.uuid4())
     # test offer_action
     target_agent_uid = str(uuid.uuid4())
