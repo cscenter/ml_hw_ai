@@ -210,7 +210,7 @@ class DummyAgent(BaseAgent):
 Если вы хотите сделать сборку с классом отлитчным от класса по умолчанию, то это можно сделать воспользовавшись 
 аргементом `agent_cls_path`. Пример:
 ```
-docker build --build-arg agent_cls_path=agent.dummy.DummyAgent -t izhleba/ai_agent -f docker/client/Dockerfile .
+docker build --build-arg agent_cls_path=agent.dummy.DummyAgent -t <dockerhub_login>/ai_agent -f docker/client/Dockerfile .
 ```
 
 Если нужны дополнительные библиотеки в сборке, добавьте их в файл `requirements.txt` и сделайте ребилд с флагом 
