@@ -1,16 +1,13 @@
 from abc import ABC, abstractmethod
-from typing import Optional
+from typing import cast, Optional, Dict
 
-from base.protocol import OfferRequest, DealRequest, RoundResult
+from base.protocol import MessageOut, MessageIn, Pong, MessageInType, PingMsg, OfferRequest, OfferResponse, \
+    DealRequest, DealResponse, MessageOutType, RoundResult
 
 
 # Agent 'interface'
 class BaseAgent(ABC):
     agent_id: Optional[int] = None
-
-    @abstractmethod
-    def get_my_name(self) -> str:
-        pass
 
     @abstractmethod
     def offer_action(self, data: OfferRequest) -> int:

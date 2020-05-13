@@ -1,11 +1,8 @@
 from agent.base import BaseAgent
-from base.protocol import OfferRequest, DealRequest, RoundResult
+from base.protocol import OfferRequest, OfferResponse, DealRequest, DealResponse, RoundResult
 
 
 class CheaterAgent(BaseAgent):
-
-    def get_my_name(self) -> str:
-        return 'Cheater'
 
     def offer_action(self, m: OfferRequest) -> int:
         return min(m.total_amount, 1)

@@ -1,13 +1,10 @@
 import random
 
 from agent.base import BaseAgent
-from base.protocol import OfferRequest, DealRequest, RoundResult
+from base.protocol import OfferRequest, OfferResponse, DealRequest, DealResponse, RoundResult
 
 
 class ChaoticAgent(BaseAgent):
-
-    def get_my_name(self) -> str:
-        return 'Chaotic'
 
     def offer_action(self, data: OfferRequest) -> int:
         return random.randint(0, data.total_amount)
