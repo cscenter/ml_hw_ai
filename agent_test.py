@@ -40,8 +40,8 @@ if __name__ == '__main__':
         round_id=1,
         win=True,
         agent_gain={
-            agent.agent_id: offer,
-            target_agent_uid: 100 - offer
+            agent.agent_id: 100 - offer,
+            target_agent_uid: offer
         }
     ))
     # test deal_action
