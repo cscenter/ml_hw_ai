@@ -9,4 +9,7 @@ COPY . .
 
 ARG agent_cls_path=agent.my_agent.MyAgent
 ENV AGENT_CLS_PATH=$agent_cls_path
-CMD [ "python", "./client.py" ]
+
+RUN python3 ./agent_test.py "$AGENT_CLS_PATH"
+
+CMD [ "python3", "./client.py" ]
