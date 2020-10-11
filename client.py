@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import asyncio
 import dataclasses
 import logging
@@ -18,7 +20,7 @@ class Client:
     def __init__(self):
         self.class_path = os.getenv('AGENT_CLS_PATH')
         if not self.class_path:
-            raise Exception("Yoy must specify environment variable AGENT_CLS_PATH")
+            raise Exception("You must specify environment variable AGENT_CLS_PATH")
         self.url = os.getenv('SERVER_URL', '127.0.0.1')
         self.port = os.getenv('SERVER_PORT', '4181')
         self.url = "tcp://{}:{}".format(self.url, self.port)
